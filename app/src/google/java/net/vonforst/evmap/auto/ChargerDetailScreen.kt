@@ -51,7 +51,10 @@ class ChargerDetailScreen(ctx: CarContext, val chargerSparse: ChargeLocation) : 
         createApi(prefs.dataSource, ctx)
     }
 
-    private val iconGen = ChargerIconGenerator(carContext, null, oversize = 1.4f, height = 64)
+    private val imageSize = 128  // images should be 128dp according to docs
+
+    private val iconGen =
+        ChargerIconGenerator(carContext, null, oversize = 1.4f, height = imageSize)
 
     override fun onGetTemplate(): Template {
         if (charger == null) loadCharger()
